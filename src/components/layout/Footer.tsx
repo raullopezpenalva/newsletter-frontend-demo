@@ -12,30 +12,27 @@ const Footer: React.FC = () => {
         <footer className="footer">
             <div className="footer-inner">
                 <div className="footer-top">
-                    {/* Navegación vertical */}    
+                    {/* Vertical navigation */}    
                     <nav className="footer-nav">
-                        <p className="footer-nav-title">Navegación</p>
-                        <a href="/">Inicio</a>
-                        <a href="/about">Sobre mí</a>
-                        <a href="/services">Servicios</a>
-                        <a href="/projects">Proyectos</a>
-                        <a href="/blog">Blog</a>
-                        <a href="/contact">Contacto</a>
+                        <p className="footer-nav-title">Navigation</p>
+                        <a href="/">Home</a>
+                        <a href="/docs">Documentation</a>
+                        <a href="/admin">Admin</a>
                     </nav>
                     
-                    {/* Bloque marca + tagline */}
+                    {/* Brand block + tagline */}
                     <div className="footer-brand">
                         <p className="footer-name">Raul Lopez Penalva</p>
-                        <p className="footer-tagline">Escalabilidad · DevOps · Infraestructura</p>
+                        <p className="footer-tagline">Scalability · DevOps · Infrastructure</p>
                     </div>
 
-                    {/* Iconos sociales */}
+                    {/* Social icons */}
                     <div className="footer-social">
-                        <p className="footer-social-title">Sígueme</p>
+                        <p className="footer-social-title">Follow</p>
                         <div className="footer-social-icons">
                             <a
                                 href={`mailto:${email}`}
-                                arial-label="Enviar email"
+                                aria-label="Send email"
                                 className="footer-icon-link"
                             >
                                 <EmailIcon />
@@ -44,7 +41,7 @@ const Footer: React.FC = () => {
                                 href={githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                arial-label="GitHub"
+                                aria-label="GitHub"
                                 className="footer-icon-link"
                             >
                                 <GitHubIcon />
@@ -53,7 +50,7 @@ const Footer: React.FC = () => {
                                 href={linkedinUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                arial-label="LinkedIn"
+                                aria-label="LinkedIn"
                                 className="footer-icon-link"
                             >
                                 <LinkedInIcon />
@@ -62,9 +59,9 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Derechos de autor */}
+                {/* Copyright */}
                 <div className="footer-bottom-copy">
-                    <p>© {currentYear} Raúl López Penalva. Todos los derechos reservados.</p>
+                    <p>© {currentYear} Raúl López Penalva. All rights reserved.</p>
                 </div>
             </div>
         </footer>

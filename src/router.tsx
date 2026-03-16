@@ -6,6 +6,7 @@ import DocsPage from "./pages/DocsPage.tsx";
 import AdminPage from "./pages/AdminPage.tsx";
 import UnsubscribePage from "./pages/UnsubscribePage.tsx";
 import ConfirmSubscriptionPage from "./pages/ConfirmSubscriptionPage.tsx";
+import ContactPage from "./pages/ContactPage.tsx";
 
 
 export const router = createBrowserRouter([
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
         path: 'admin',
         element: <AdminPage />,
       },
+      {
+        path: 'contact',
+        element: <ContactPage />,
+      }
     ],
   },
   {
@@ -38,7 +43,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: '/verify',
+    path: '/newsletter/verify',
     element: <SpecialLayout />,
     children: [
       {

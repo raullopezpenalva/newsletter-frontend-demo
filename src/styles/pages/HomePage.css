@@ -101,6 +101,32 @@
     margin-bottom: var(--margin-md);
 }
 
+.home-subscribe-form {
+    flex: 1 1 0%;
+    border: 1px solid var(--surface-2);
+    border-radius: var(--btn-corner-radius);
+    padding: var(--space-stack);
+}
+
+.subscribe-confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.confirmation-result {
+    padding-top: var(--subsection-padding-vertical);
+    padding-bottom: var(--subsection-padding-vertical);
+    padding-left: var(--subsection-padding-horizontal);
+    padding-right: var(--subsection-padding-horizontal);
+    min-width: 336px;
+    margin: var(--space-column) auto;
+    text-align: center;
+    background-color: var(--surface-2);
+    border-radius: 8px;
+}
 
 @keyframes heroTextFocus {
     0% {
