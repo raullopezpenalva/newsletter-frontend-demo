@@ -1,0 +1,61 @@
+/* Button styles */
+.btn {
+    display: inline-flex;
+    padding: var(--btn-padding);
+    border-radius: var(--btn-corner-radius);
+    font-size: var(--btn-font-size);
+    font-weight: var(--font-weight-medium);;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    height: var(--btn-height);
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    gap: var(--btn-gap);
+}
+
+/* Primary button style */
+.btn-primary {
+    background: var(--btn-bg-primary);
+    color: var(--btn-fg-primary);
+    border: 1px solid var(--btn-border-primary);
+    opacity: 0.85;
+}
+
+.btn-primary:hover {
+    opacity: 1;
+}
+
+/* Secondary button style */
+.btn-secondary {
+    background: var(--btn-bg-secondary);
+    color: var(--btn-fg-secondary);
+    opacity: 0.85;
+}
+
+.btn-secondary:hover {
+    opacity: 1;
+}
+
+/* Alternative button style */
+.btn-alternative {
+    background: var(--btn-bg-alternative);
+    color: var(--btn-fg-alternative);
+    opacity: 0.85;
+}
+
+.btn-alternative:hover {
+    opacity: 1;
+}
+
+/* Muted button style */
+.btn-muted {
+    background: transparent;
+    color: var(--fg);
+}
+
+.btn-muted:hover {
+    background: var(--btn-bg-muted-hover);
+    color: var(--fg-title);
+}

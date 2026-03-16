@@ -1,0 +1,9 @@
+/* Container styles */
+.Container {
+   flex: 1;
+   width: auto;
+}
+
+.Container.prose {
+    max-width: 700px;
+}

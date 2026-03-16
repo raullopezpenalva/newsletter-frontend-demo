@@ -1,0 +1,11 @@
+@import "./layouts/Header.css";
+@import "./layouts/Container.css";
+
+
+
+/* Layout styles */
+.Layout-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

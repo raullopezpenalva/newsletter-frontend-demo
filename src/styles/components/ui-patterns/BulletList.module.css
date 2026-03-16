@@ -1,0 +1,65 @@
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0;
+}
+
+.tight {
+    gap: 0.5rem;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.5rem;
+    align-items: start;
+}
+
+.marker {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: var(--bullet-margin);
+    border-radius: 999px;
+    background: var(--accent-1);
+}
+
+.text {
+    line-height: 1.5;
+}
+
+.marker-dot {
+    border-radius: 999px;
+    background: #5c5d5f;
+}
+
+.marker-dash {
+    width: 0.8rem;
+    height: 0.2rem;
+    margin-top: 0.75rem;
+    border-radius: 999px;
+    background: #5c5d5f;
+}
+
+.marker-check {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-top: 0.2rem;
+    border-radius: 999px;
+    background: transparent;
+    border: 1px solid #5c5d5f;
+    position: relative;
+}
+
+.marker-check::after {
+    content: '';
+    position: absolute;
+    top: 0.1rem;
+    left: 0.25rem;
+    width: 0.25rem;
+    height: 0.5rem;
+    border-right: 2px solid #5c5d5f;
+    border-bottom: 2px solid #5c5d5f;
+    transform: rotate(45deg);
+}

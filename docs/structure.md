@@ -6,24 +6,34 @@ src/
 │   └── docsApi.ts
 │
 ├── components/
+│   ├── domain/
+│   │   ├── SubscribeForm.tsx
+│   │   ├── GeneratedLinksPanel.tsx
+│   │   ├── UnsubscribeStatus.tsx
+│   │   └── SwaggerViewer.tsx
+│   │
 │   ├── layout/
-│   │   ├── AppLayout.tsx
+│   │   ├── Container.tsx
+│   │   ├── Footer.tsx
 │   │   ├── Header.tsx
-│   │   └── Nav.tsx
+│   │   └── Layout.tsx
 │   │
-│   ├── subscribe/
-│   │   └── SubscribeForm.tsx
+│   ├── ui-patterns/
+│   │   ├── Bullet.tsx
+│   │   ├── BulletList.tsx
+│   │   ├── Card.tsx
+│   │   ├── Section.tsx
+│   │   └── SubSection.tsx
 │   │
-│   ├── links/
-│   │   └── GeneratedLinksPanel.tsx
-│   │
-│   ├── feedback/
-│   │   ├── LoadingState.tsx
-│   │   ├── ErrorState.tsx
-│   │   └── SuccessState.tsx
-│   │
-│   └── docs/
-│       └── SwaggerViewer.tsx
+│   └── ui-primitives/
+│       ├── Button.tsx
+│       ├── Stack.tsx
+│       └── Text.tsx
+│
+├── hooks/
+│   ├── useSubscribe.ts
+│   ├── useGenerateLinks.ts
+│   └── useUnsubscribeFlow.ts
 │
 ├── pages/
 │   ├── HomePage.tsx
@@ -31,21 +41,20 @@ src/
 │   ├── AdminPage.tsx
 │   └── UnsubscribePage.tsx
 │
-├── hooks/
-│   ├── useSubscribe.ts
-│   ├── useGenerateLinks.ts
-│   └── useUnsubscribeFlow.ts
+├── styles/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   ├── components.css
+│   ├── layout.css
+│   └── pages.css
 │
 ├── types/
 │   ├── api.ts
 │   └── newsletter.ts
 │
-├── router/
-│   └── index.tsx
-│
-├── styles/
-│   └── global.css
-│
+├── router.tsx
 ├── App.tsx
+├── index.css
 └── main.tsx
 ```
