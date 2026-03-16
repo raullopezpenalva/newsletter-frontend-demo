@@ -19,16 +19,14 @@ const Header: React.FC = () => {
         <div className="Header-center">
           {/* Desktop nav */}
           <nav className="Header-navDesktop">
-            <NavLink to="/" className="btn btn-muted">Inicio</NavLink>
-            <NavLink to="/about" className="btn btn-muted">Sobre mí</NavLink>
-            <NavLink to="/vision" className="btn btn-muted">Visión</NavLink>
-            <NavLink to="/projects" className="btn btn-muted">Proyectos</NavLink>
-            <NavLink to="/blog" className="btn btn-muted">Blog</NavLink>
+            <NavLink to="/" className="btn btn-muted">Home</NavLink>
+            <NavLink to="/docs" className="btn btn-muted">Documentation</NavLink>
+            <NavLink to="/admin" className="btn btn-muted">Admin</NavLink>
           </nav>
           {/* Mobile nav button */}
           <button
             className="Header-navMobile"
-            aria-label="Abrir menú"
+            aria-label="Open menu"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobilePanel"
             onClick={() => setMobileMenuOpen((open) => !open)}
@@ -40,18 +38,16 @@ const Header: React.FC = () => {
         </div>
         <div className="Header-right">
           <Button to="/contact" variant="secondary" className="Header-contact-btn">
-            Contacto
+            Contact
           </Button>
         </div>
       </div>
       {/* Mobile nav panel */}
       {mobileMenuOpen && (
         <nav className="Header-navMobile mobilePanel" id="mobilePanel">
-          <NavLink to="/" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Inicio</NavLink>
-          <NavLink to="/about" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Sobre mí</NavLink>
-          <NavLink to="/vision" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Visión</NavLink>
-          <NavLink to="/projects" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Proyectos</NavLink>
-          <NavLink to="/blog" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Blog</NavLink>
+          <NavLink to="/" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Home</NavLink>
+          <NavLink to="/docs" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Documentation</NavLink>
+          <NavLink to="/admin" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Admin</NavLink>
         </nav>
       )}
     </header>

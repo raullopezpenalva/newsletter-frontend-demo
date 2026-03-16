@@ -5,11 +5,12 @@ interface SubSectionProps {
     title?: string;
     subtitles?: string;
     children: React.ReactNode;
+    className?: string;
 }
 
-const SubSection: React.FC<SubSectionProps> = ({ id, title, subtitles, children }) => {
+const SubSection: React.FC<SubSectionProps> = ({ id, title, subtitles, children, className }) => {
     return (
-        <section id={id} className="Subsection">
+        <section id={id} className={className || "Subsection"}>
             {(title || subtitles) && (
                 <header className="header">
                     {title && <h2 className="title">{title}</h2>}
