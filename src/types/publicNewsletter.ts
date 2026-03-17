@@ -43,3 +43,23 @@ export type UnsubscribeLinksResponse = {
   count: number
   links: UnsubscribeLink[]
 }
+
+export type UnsubscribeRequest = {
+  token: string
+}
+
+export type UnsubscribeResponse = {
+  email: string
+  token: string
+}
+
+export type UnsubscribeConfirmationRequest = {
+  email: string
+  token: string
+}
+
+export type UnsubscribeConfirmationResponse = {
+  id: string
+  email: string
+  status: string
+}

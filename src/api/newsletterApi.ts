@@ -4,6 +4,10 @@ import type {
   SubscribeResponse,
   SubscribeConfirmationResponse,
   UnsubscribeLinksResponse,
+  UnsubscribeRequest,
+  UnsubscribeResponse,
+  UnsubscribeConfirmationRequest,
+  UnsubscribeConfirmationResponse
 } from "../types/publicNewsletter";
 
 export async function subscribeToNewsletter(
@@ -29,5 +33,23 @@ export async function confirmSubscription(
 export async function generateUnsubscribeLinks(): Promise<UnsubscribeLinksResponse> {
   return apiRequest<UnsubscribeLinksResponse>("/newsletter/generate-unsubscribe-links", {
     method: "GET",
+  });
+}
+
+export async function unsubscribeFromNewsletter(
+  payload: UnsubscribeRequest,
+): Promise<UnsubscribeResponse> {
+  return apiRequest<UnsubscribeResponse>("/newsletter/unsubscribe", {
+    method: "POST",
+    body: payload,
+  });
+}
+
+export async function confirmUnsubscription(
+  payload: UnsubscribeConfirmationRequest,
+): Promise<UnsubscribeConfirmationResponse> {
+  return apiRequest<UnsubscribeConfirmationResponse>("/newsletter/confirm-unsubscription", {
+    method: "POST",
+    body: payload,
   });
 }
