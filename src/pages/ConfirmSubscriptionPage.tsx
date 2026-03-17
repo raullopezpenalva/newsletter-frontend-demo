@@ -13,6 +13,7 @@ function ConfirmSubscriptionPage() {
 
   return (
     <Section
+      id='Subscribe-confirmation-section'
       title="Subscription verification"
       subtitles="Confirm your newsletter subscription"
     >
