@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: '/unsubscribe',
+    path: '/newsletter/unsubscribe',
     element: <SpecialLayout />,
     children: [
       {

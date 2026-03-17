@@ -48,7 +48,7 @@ export default function ContactForm() {
         setGlobalError(null);
         
         try {
-            const response = await fetch('https://raullopezpenalva.com/api/v1/contact/messages', {
+            const response = await fetch('/api/v1/contact/messages', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

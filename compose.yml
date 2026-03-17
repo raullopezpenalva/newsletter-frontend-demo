@@ -1,0 +1,12 @@
+services:
+  frontend:
+    container_name: newsletter-frontend
+    build: .
+    ports:
+      - "80:80"
+    networks:
+      - dev-network
+
+networks:
+  dev-network:
+    external: true
