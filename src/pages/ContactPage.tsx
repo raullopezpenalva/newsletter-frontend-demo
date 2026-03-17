@@ -12,11 +12,19 @@ const ContactPage: React.FC = () => {
 
                     <div className="contact-inner-left">
 
-                        <Text variant="title">Contacto</Text>
+                        <Text variant="title">Questions about the demo?</Text>
 
-                        <Text variant="body">Si buscas colaboración técnica, desarrollo backend/frontend oarquitectura de servicios, este es el punto de partida</Text>
+                        <Text variant="body">This demo is part of my personal portfolio and showcases a simple newsletter system built around a SPA frontend and backend services.</Text>
 
-                        <Stack direction="column" gap="md" justifyContent="flex-start" align="start" margin="lg">
+                        <Text variant="body">
+
+                            If you have questions about the architecture, API design, service integration or the technologies used in this project, feel free to send a message.</Text>
+
+                        <Text variant="body">
+
+                            I'm always happy to discuss backend development, DevOps and system design.</Text>
+
+                        <Stack direction="row" gap="md" justifyContent="center" align="center" margin="md">
                             <Button variant="alternative" to="https://www.linkedin.com/in/raullopezpenalva/">LinkedIn</Button>
                             <Button variant="secondary" to="https://github.com/raullopezpenalva">
                                 <GitHubIconLetter />
@@ -26,7 +34,7 @@ const ContactPage: React.FC = () => {
                     </div>
                     <div className="contact-inner-right">
                         <div className="contact-form-header">
-                            <Text variant="caption">¿Quieres hablar?</Text>
+                            <Text variant="caption">Want to talk?</Text>
                         </div>
                         <div className="contact-form-container">
                             {<ContactForm />}
