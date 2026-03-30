@@ -1,10 +1,18 @@
-
+import SwaggerViewer from "../components/domain/SwaggerViewer";
+import Section from "../components/ui-patterns/Section";
 
 const DocsPage: React.FC = () => {
   return (
-    <div>
-      <h1>Docs Page</h1>
-    </div>
+    <>
+      <Section
+        className="API-Documentation"
+      >
+        <SwaggerViewer />
+      </Section>
+    
+    
+    </>
+    
   );
 };
 
