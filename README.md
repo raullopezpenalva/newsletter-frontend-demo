@@ -229,3 +229,7 @@ This project is designed to demonstrate:
 **Raúl López Penalva**
 
 If you have any questions about the project, architecture or implementation, feel free to reach out through the contact page.
+
+## License
+
+MIT License.
