@@ -1,0 +1,42 @@
+/* Generic section styles */
+.Section {
+    padding: var(--space-section) 0 var(--space-section);
+    background: linear-gradient(
+        to top,
+        var(--bg),
+        var(--surface-1)
+    );
+}
+
+.Section-inner {
+    padding-left: var(--page-padding-left);
+    padding-right: var(--page-padding-right);
+    max-width: var(--page-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+.Section header {
+    margin-top: var(--section-header-margin-vertical);
+    margin-bottom: var(--section-header-margin-vertical);
+    text-align: left;
+}
+
+.Section header .title {
+    margin-top: 0;
+    margin-bottom: var(--section-header-margin-vertical);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
+    color: var(--fg-title);
+}
+
+.Section header .subtitle {
+    color: var(--fg-subtle);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.Section .content {
+    display: flex;
+}

@@ -1,0 +1,43 @@
+/* Generic subsection styles */
+.Subsection {
+    padding-top: var(--subsection-padding-vertical);
+    padding-bottom: var(--subsection-padding-vertical);
+    padding-left: var(--subsection-padding-horizontal);
+    padding-right: var(--subsection-padding-horizontal);
+    min-width: 336px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--surface-2);
+    border-radius: 8px;
+
+}
+
+.Subsection header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.Subsection header .title {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    color: var(--fg-subtle);
+}
+
+.Subsection header .subtitle {
+    margin: 0;
+    color: var(--fg-subtle);
+}
+
+.Subsection .content {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--fg);
+    justify-items: center;
+}
+
+@media (max-width: 599px) {
+    .Subsection {
+        min-width: 100%;
+    }
+}

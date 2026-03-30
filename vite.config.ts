@@ -4,4 +4,23 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+  server: {
+    proxy: {
+      "/api/v1/contact": {
+        target: "https://raullopezpenalva.com",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/api/v1": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/v3/api-docs": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
+});

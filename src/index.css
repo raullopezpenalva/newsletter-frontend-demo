@@ -1,111 +1,261 @@
+@import "./styles/layout.css";
+@import "./styles/components.css";
+@import "./styles/pages.css";
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* Fonts */
+  --font-title: 'Inter', system-ui, sans-serif;
+  --font-text: 'Aeonik', system-ui, sans-serif;
+  --font-code: ui-monospace, SF Mono, SF Mono Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --lh-base: 1.5;
+  --fw-base: 400;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Colors - Background */
+  --bg: #08090a;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Colors - Surfaces */
+  --surface-1: #151617;
+  /* Section light shade background*/
+  --surface-2: #151517;
+  /* sub sections background */
+  --surface-3: #313131;
+  /* section highlight background*/
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  /* Colors - Text */
+  --fg: #8a8f98;
+  /* Primary text */
+  --fg-muted: #7b8189;
+  /* Secondary text */
+  --fg-subtle: #ebeced;
+  /* Subtle text */
+  --fg-title: #f7f8f8;
+  /* Titles text */
+
+  /* Colors - Accents */
+  --accent-1: #02b8cc;
+  /* Bullets */
+  --accent-2: #5e68d0;
+  /* Header pages hover */
+  --accent-3: #4ea6fb;
+  --accent-4: #f2c94c;
+  /* Bullets highlight */
+  --accent-5: #26b5ce;
+  --accent-6: #f2994a;
+  --accent-7: #45a475;
+  --accent-8: #c86135;
+  --accent-9: #68cc58;
+  --accent-10: #d4b144;
+  --accent-linkedin: #0072b1;
+  /* LinkedIn icon color */
+
+  /* Colors - Components */
+  --btn-bg-primary: #28282c;
+  /* primary button background*/
+  --btn-bg-secondary: #e6e6e6;
+  /* secondary button background*/
+  --btn-bg-alternative: var(--accent-linkedin);
+  /* alternative button background */
+  --btn-fg-secondary: #08090a;
+  /* secondary button text*/
+  --btn-fg-primary: #f1f2f2;
+  /* primary button text*/
+  --btn-fg-alternative: #f1f2f2;
+  /* alternative button text */
+  --btn-border-primary: #3e3e44;
+  /* Border primary button */
+  --btn-bg-muted-hover: #1d1e1f;
+  /* muted button hover background */
+  --header-bottom-border: #1d1d1e;
+  /* Header bottom border */
+  --footer-top-border: #1d1d1e;
+  /* Footer top border */
+
+
+  /* Space scale */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  /* 4px */
+  --space-2: 0.5rem;
+  /* 8px */
+  --space-3: 0.75rem;
+  /* 12px */
+  --space-4: 1rem;
+  /* 16px */
+  --space-5: 1.5rem;
+  /* 24px */
+  --space-6: 2rem;
+  /* 32px */
+  --space-7: 3rem;
+  /* 48px */
+  --space-8: 4rem;
+  /* 64px */
+  --space-9: 6rem;
+  /* 96px */
+  --space-10: 8rem;
+  /* 128px */
+  --space-11: 12rem;
+  /* 192px */
+  --space-12: 16rem;
+  /* 256px */
+
+  /* Space Aliases (semantic) */
+  --space-inline: var(--space-2);
+  --space-stack: var(--space-4);
+  --space-list: var(--space-2);
+
+  --space-subsection: var(--space-5);
+  --space-section: var(--space-7);
+  --space-column: var(--space-10);
+
+  /* Layout variables */
+  --page-padding-left: var(--space-5);
+  --page-padding-right: var(--space-5);
+  --page-max-width: 1024px;
+
+  /* Font sizes */
+  --font-size-xxs: 0.5rem;
+  /* 8px */
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-md: 1rem;
+  /* 16px */
+  --font-size-lg: 1.125rem;
+  /* 18px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
+  --font-size-3xl: 1.875rem;
+  /* 30px */
+  --font-size-4xl: 2.25rem;
+  /* 36px */
+  --font-size-5xl: 3rem;
+  /* 48px */
+  --font-size-6xl: 3.75rem;
+  /* 60px */
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 510;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Letter spacing */
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+  --letter-spacing-widest: 0.15em;
+
+  /* Header variables */
+  --header-nav-gap: var(--space-3);
+  --header-height: var(--space-8);
+
+  /* Footer variables */
+  --footer-padding-vertical: var(--space-5);
+  --footer-top-gap: var(--space-7);
+  --footer-icons-gap: var(--space-2);
+  --footer-nav-gap: var(--space-2);
+  --footer-font-title-size: var(--space-3);
+  --footer-icon-size: var(--space-6);
+
+  /* Secion variables */
+  --section-header-margin-vertical: var(--space-2);
+
+  /* Subsection variables */
+  --subsection-padding-vertical: var(--space-4);
+  --subsection-padding-horizontal: var(--space-4);
+
+  /* Stack Grid variables */
+  --gap-none: 0;
+  --gap-xs: var(--space-2);
+  --gap-sm: var(--space-3);
+  --gap-md: var(--space-4);
+  --gap-lg: var(--space-5);
+  --gap-xl: var(--space-6);
+  --gap-xxl: var(--space-8);
+  --margin-none: 0;
+  --margin-xs: var(--space-2);
+  --margin-sm: var(--space-3);
+  --margin-md: var(--space-4);
+  --margin-lg: var(--space-7);
+  --margin-xl: var(--space-8);
+
+  /* Text variables */
+  --text-parraph-margin-normal: var(--space-4);
+  --text-parraph-margin-dense: var(--space-2);
+  --text-parraph-margin-large: var(--space-6);
+  --text-body-margin: var(--space-1);
+
+  /* Button variables */
+  --btn-height: var(--space-6);
+  --btn-icon-size: var(--space-4);
+  --btn-font-size: var(--space-3);
+  --btn-corner-radius: var(--space-2);
+  --btn-padding: 0 12px;
+  --btn-gap: 8px;
+  --kbd-offset: -5px;
+  --kbd-size: 18px;
+
+  /* Hero section variables */
+  --hero-padding: var(--space-section) 0 var(--space-section);
+
+  /* Card grid variables */
+  --card-vertical-padding: var(--space-5);
+  --card-margin: var(--space-3) auto;
+  --card-grid-margin: var(--space-section) 0;
+  --card-horizontal-padding: var(--space-4);
+
+  /* Bullet list variables */
+  --bullet-width: 0.5rem;
+  --bullet-height: 0.5rem;
+  --bullet-margin: 12px 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: anywhere;
 }
 
 body {
   margin: 0;
+  font-family: var(--font-text);
+  line-height: var(--lh-base);
+  font-weight: var(--fw-base);
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+@media (max-width: 599px) {
+  /* Mobile-specific styles */
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+@media (min-width: 600px) and (max-width: 1023px) {
+  /* Tablet-specific styles */
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+@media (min-width: 1024px) {
+  /* Desktop-specific styles */
 }

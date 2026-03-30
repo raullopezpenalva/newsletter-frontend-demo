@@ -1,0 +1,184 @@
+/* Hero section styles */
+
+.hero-section {
+    padding: var(--hero-padding);
+    background: var(--bg);
+}
+.hero-inner {
+    padding-left: var(--page-padding-left);
+    padding-right: var(--page-padding-right);
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-kicker {
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+    letter-spacing: var(--letter-spacing-widest);
+    color: var(--fg);
+    margin:var(--space-stack) 0;
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(8px);
+    animation: heroTextFocus 1s cubic-bezier(0.2, 0, 0.9, 1) forwards;
+    will-change: opacity, filter, transform, clip-path;
+    animation-delay: 0.5s;
+    clip-path: inset(0 100% 0 0);
+}
+
+.hero-title {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--fg-title);
+    margin: var(--space-stack) 0;
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(8px);
+    animation: heroTextFocus 1s cubic-bezier(0.2, 0, 0.9, 1) forwards;
+    will-change: opacity, filter, transform;
+    animation-delay: 750ms;
+}
+
+.hero-text {
+    text-transform: uppercase;
+    font-size: var(--font-size-lg);
+    letter-spacing: var(--letter-spacing-wider);
+    color: var(--fg);
+    margin: var(--space-stack) 0;
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(8px);
+    animation: heroTextFocus 1s cubic-bezier(0.2, 0, 0.9, 1) forwards;
+    will-change: opacity, filter, transform;
+    animation-delay: 900ms;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-xs);
+    margin: var(--space-section) 0 var(--space-stack);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: heroActionsIn 0.5s cubic-bezier(0.2, 0, 0.9, 1) forwards;
+    animation-delay: 1.5s;
+    will-change: opacity, transform;
+}
+
+/* Personal website section styles */
+.personalweb-bullet-list {
+    align-self: flex-start;
+    padding: 0;
+}
+
+
+.personalweb-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap-xs);
+}
+
+
+/* CTA HomePage styles */
+.call-to-action {
+    background-color: var(--surface-2);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--btn-border-primary);
+    text-align: center;
+}
+
+.call-to-action h2 {
+    color: var(--fg-title);
+    font-size: var(--font-size-3xl);
+    margin-bottom: 1rem;
+}
+
+.call-to-action p {
+    color: var(--fg-subtle);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--margin-md);
+}
+
+.home-subscribe-form {
+    flex: 1 1 0%;
+    border: 1px solid var(--surface-2);
+    border-radius: var(--btn-corner-radius);
+    padding: var(--space-stack);
+}
+
+.subscribe-confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.confirmation-result {
+    padding-top: var(--subsection-padding-vertical);
+    padding-bottom: var(--subsection-padding-vertical);
+    padding-left: var(--subsection-padding-horizontal);
+    padding-right: var(--subsection-padding-horizontal);
+    min-width: 336px;
+    margin: var(--space-column) auto;
+    text-align: center;
+    background-color: var(--surface-2);
+    border-radius: 8px;
+}
+
+@keyframes heroTextFocus {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(8px);
+        clip-path: inset(0 100% 0 0);
+    }
+
+    50% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes heroActionsIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-kicker,
+    .hero-title,
+    .hero-text {
+        animation: none;
+        opacity: 1;
+        filter: none;
+        transform: none;
+        clip-path: none;
+    }
+    .hero-actions {
+        flex-direction: column;
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    .hero-text {
+        font-size: var(--font-size-sm);
+    }
+}

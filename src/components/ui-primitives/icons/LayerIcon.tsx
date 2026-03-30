@@ -1,0 +1,29 @@
+import React from "react";
+
+interface LayerIconProps {
+    className?: string;
+}
+
+const LayerIcon: React.FC<LayerIconProps> = ({ className }) => (
+    <svg
+        className={className}
+        fill="currentColor"
+        width="36"
+        height="36"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <title>layers-filled</title>
+        <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+            <g fill="currentColor" fillRule="nonzero">
+                <g transform="translate(42.666667, 53.973333)">
+                    <path d="M378.986667,273.557333 L426.666667,297.386667 L213.333333,404.053333 L7.10542736e-15,297.386667 L47.68,273.557333 L213.333333,356.396117 L378.986667,273.557333 Z M213.333333,190.72 L235.925333,202.026667 L213.333333,213.331174 L190.741333,202.026667 L213.333333,190.72 Z" />
+                    <polygon points="379.008 178.180039 426.666667 202.026667 213.333333 308.693333 3.55271368e-14 202.026667 47.6586667 178.180039 213.333333 261.036117" />
+                    <polygon points="213.333333 -7.10542736e-15 426.666667 106.666667 213.333333 213.333333 3.55271368e-14 106.666667" />
+                </g>
+            </g>
+        </g>
+    </svg>
+);
+
+export default LayerIcon;

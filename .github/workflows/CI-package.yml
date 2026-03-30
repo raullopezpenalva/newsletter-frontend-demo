@@ -1,0 +1,43 @@
+name: CI - Build and Push to GHCR
+
+on:
+  release:
+    types: [released]
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: raullopezpenalva/demo-frontend-newsletter
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.REGISTRY_TOKEN}}" | docker login ${{ env.REGISTRY }} -u ${{ secrets.REGISTRY_USER }} --password-stdin
+
+      - name: Show ref
+        run: echo $GITHUB_REF
+
+      - name: Extract tag from ref
+        id: extract_tag
+        run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Build Docker Image
+        run: |
+          docker build \
+            -t $REGISTRY/$IMAGE_NAME:latest \
+            -t $REGISTRY/$IMAGE_NAME:$TAG \
+            .
+      
+      - name: Push Docker Image to GHCR
+        run: |
+          docker push $REGISTRY/$IMAGE_NAME:latest
+          docker push $REGISTRY/$IMAGE_NAME:$TAG
