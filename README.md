@@ -125,7 +125,7 @@ The easiest way to run the demo is using Docker.
 The docker-compose setup includes:
 
 - Frontend (Nginx) → serves the built SPA
-- Newsletter backend → prebuilt image with API
+- Newsletter backend → prebuilt image with API [Backend-Repository](https://github.com/raullopezpenalva/Newsletter-Service)
 - Database → persistent storage
 - Maildev → email testing tool
 
