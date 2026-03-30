@@ -1,10 +1,6 @@
 export type OpenApiSpec = Record<string, unknown>;
 
-const OPENAPI_SPEC_URL = import.meta.env.VITE_OPENAPI_SPEC_URL;
-
-if (!OPENAPI_SPEC_URL) {
-  throw new Error("VITE_OPENAPI_SPEC_URL is not defined");
-}
+const OPENAPI_SPEC_URL = import.meta.env.VITE_OPENAPI_SPEC_URL ?? "v3/api-docs";
 
 export async function fetchOpenApiSpec(): Promise<OpenApiSpec> {
   const response = await fetch(OPENAPI_SPEC_URL, {
